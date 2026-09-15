@@ -1,4 +1,4 @@
-const pool = require("./database.js");
+const pool = require("../../config/database.js");
 
 async function create(dados) {
   const result = await pool.query(
