@@ -32,3 +32,33 @@ function validar(dados) {
     throw new AppError("Status inválido", 400);
   }
 }
+
+async function create(dados) {
+  validar(dados);
+  return repo.create(dados);
+}
+
+async function findAll() {
+  return repo.findAll();
+}
+
+async function findById(id) {
+  const item = await repo.findById(id);
+  if (!item) {
+    throw new AppError("Registro não encontrado", 404);
+  }
+  return item;
+}
+
+async function update(id, dados) {
+  await findById(id);
+  validar(dados);
+  return repo.update(id, dados);
+}
+
+async function remove(id) {
+  await findById(id);
+  return repo.remove(id);
+}
+
+module.exports = { create, findAll, findById, update, remove };
