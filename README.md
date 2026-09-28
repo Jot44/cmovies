@@ -1,6 +1,6 @@
 # 🎬 cmovies
 
-API REST para gerenciamento de um catálogo pessoal de filmes e séries — cadastre, liste, atualize e remova títulos, controlando se já assistiu ou não e sua nota pessoal.
+API REST para gerenciamento de um catálogo pessoal de filmes e séries. Cadastre, liste, atualize e remova títulos, controlando se já assistiu ou não e sua nota pessoal.
 
 Projeto construído do zero como estudo de **Node.js + Express** aplicando **arquitetura em camadas** (Controller → Service → Repository), validação manual de dados e tratamento centralizado de erros.
 
@@ -114,7 +114,7 @@ DB_PASSWORD=<senha>
 DB_NAME=<nome_do_banco>
 ```
 
-> ⚠️ O arquivo `.env` nunca deve ser commitado (já está no `.gitignore`). Use `.env.example` apenas como referência do formato esperado. Se alguma dessas variáveis não for definida, a aplicação **falha ao iniciar** com um erro claro (`env.js` valida isso antes de qualquer outra coisa rodar).
+> Use `.env.example` apenas como referência do formato esperado. Se alguma dessas variáveis não for definida, a aplicação **falha ao iniciar** com um erro claro (`env.js` valida isso antes de qualquer outra coisa rodar).
 
 ### 4. Suba o banco de dados com Docker
 
