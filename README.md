@@ -57,8 +57,7 @@ cmovies/
 │   │       ├── title.routes.js         # define os endpoints (/, /:id) do módulo
 │   │       ├── title.controller.js     # recebe req/res, chama o service
 │   │       ├── title.service.js        # validação e regras de negócio
-│   │       ├── title.repository.js     # acesso ao banco (queries SQL)
-│   │       └── title.model.js          # typedef JSDoc descrevendo o formato de um Title
+│   │       └── title.repository.js     # acesso ao banco (queries SQL)
 │   ├── shared/
 │   │   └── errors/
 │   │       ├── AppError.js             # classe de erro customizada (mensagem + status HTTP)
