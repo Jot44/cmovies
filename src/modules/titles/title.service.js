@@ -6,6 +6,10 @@ function validar(dados) {
     throw new AppError("Título é obrigatório", 400);
   }
 
+  if (dados.name.length > 100) {
+    throw new AppError("O limite de caracteres é 100", 400);
+  }
+
   if (!["movie", "series"].includes(dados.type)) {
     throw new AppError("Tipo inválido", 400);
   }
@@ -14,15 +18,24 @@ function validar(dados) {
     throw new AppError("Gênero deve ser uma string", 400);
   }
 
+  if (dados.genre !== undefined && dados.genre.length > 50) {
+    throw new AppError("O limite de caracteres é 50", 400);
+  }
+
   const anoAtual = new Date().getFullYear();
   if (
     dados.release_year !== undefined &&
-    (dados.release_year < 1888 || dados.release_year > anoAtual + 1)
+    (typeof dados.release_year !== "number" ||
+      dados.release_year < 1888 ||
+      dados.release_year > anoAtual + 1)
   ) {
     throw new AppError("Ano de lançamento fora do intervalo permitido", 400);
   }
 
-  if (dados.rating !== undefined && (dados.rating < 0 || dados.rating > 10)) {
+  if (
+    dados.rating !== undefined &&
+    (typeof dados.rating !== "number" || dados.rating < 0 || dados.rating > 10)
+  ) {
     throw new AppError("Nota fora do intervalo permitido", 400);
   }
   if (
