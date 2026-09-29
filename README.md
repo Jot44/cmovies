@@ -6,7 +6,7 @@ Projeto construído do zero como estudo de **Node.js + Express** aplicando **arq
 
 ---
 
-## 🧱 Tecnologias
+## Tecnologias
 
 - **[Node.js](https://nodejs.org/)** — runtime JavaScript
 - **[Express 5](https://expressjs.com/)** — framework web/HTTP
@@ -17,7 +17,7 @@ Projeto construído do zero como estudo de **Node.js + Express** aplicando **arq
 
 ---
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 O projeto segue uma **arquitetura em camadas**, separando responsabilidades:
 
@@ -44,7 +44,7 @@ Erros de negócio (dados inválidos, registro não encontrado) são lançados at
 
 ---
 
-## 📁 Estrutura de pastas
+## Estrutura de pastas
 
 ```
 cmovies/
@@ -57,8 +57,7 @@ cmovies/
 │   │       ├── title.routes.js         # define os endpoints (/, /:id) do módulo
 │   │       ├── title.controller.js     # recebe req/res, chama o service
 │   │       ├── title.service.js        # validação e regras de negócio
-│   │       ├── title.repository.js     # acesso ao banco (queries SQL)
-│   │       └── title.model.js          # typedef JSDoc descrevendo o formato de um Title
+│   │       └── title.repository.js     # acesso ao banco (queries SQL)
 │   ├── shared/
 │   │   └── errors/
 │   │       ├── AppError.js             # classe de erro customizada (mensagem + status HTTP)
@@ -73,14 +72,14 @@ cmovies/
 
 ---
 
-## ⚙️ Pré-requisitos
+## Pré-requisitos
 
 - [Node.js](https://nodejs.org/) instalado (recomendado v18+)
 - [Docker](https://www.docker.com/) e Docker Compose instalados (para rodar o banco de dados)
 
 ---
 
-## 🚀 Como rodar o projeto
+## Como rodar o projeto
 
 ### 1. Clone o repositório
 
@@ -165,7 +164,7 @@ A API estará disponível em `http://localhost:<PORT>`.
 
 ---
 
-## 📚 Endpoints da API
+## Endpoints da API
 
 Todas as rotas abaixo são prefixadas por **`/cmovies`**.
 
@@ -254,7 +253,7 @@ GET /cmovies/999
 
 ---
 
-## 🧯 Tratamento de erros
+## Tratamento de erros
 
 Todos os erros de negócio são instâncias de `AppError`, que carregam uma mensagem e um código de status HTTP:
 
@@ -278,7 +277,7 @@ Esses erros são capturados nos controllers (`try/catch`) e repassados via `next
 
 ---
 
-## 🧪 Testando a API
+## Testando a API
 
 Você pode testar todos os endpoints usando o [Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/):
 
