@@ -46,6 +46,19 @@ function validar(dados) {
   }
 }
 
+function limparNulos(objeto) {
+  const entradas = Object.entries(objeto);
+
+  const entradasLimpas = entradas.map(([chave, valor]) => {
+    if (valor === null) {
+      return [chave, undefined];
+    }
+    return [chave, valor];
+  });
+
+  return Object.fromEntries(entradasLimpas);
+}
+
 async function create(dados) {
   validar(dados);
   return repo.create(dados);
@@ -64,9 +77,12 @@ async function findById(id) {
 }
 
 async function update(id, dados) {
-  await findById(id);
-  validar(dados);
-  return repo.update(id, dados);
+  const item = await findById(id);
+  const itemLimpo = limparNulos(item);
+  const itensMesclados = { ...itemLimpo, ...dados };
+
+  validar(itensMesclados);
+  return repo.update(id, itensMesclados);
 }
 
 async function remove(id) {
